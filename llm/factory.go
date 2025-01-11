@@ -2,10 +2,10 @@ package llm
 
 import (
 	"fmt"
-	"github.com/aakashshankar/llm-cli/session"
-	"github.com/aakashshankar/llm-cli/variants/anthropic"
-	"github.com/aakashshankar/llm-cli/variants/mistral"
-	"github.com/aakashshankar/llm-cli/variants/openai"
+	"github.com/ahhcash/llm-cli/session"
+	"github.com/ahhcash/llm-cli/variants/anthropic"
+	"github.com/ahhcash/llm-cli/variants/mistral"
+	"github.com/ahhcash/llm-cli/variants/openai"
 	"net/http"
 )
 

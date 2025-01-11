@@ -1,4 +1,4 @@
-module github.com/aakashshankar/llm-cli
+module github.com/ahhcash/llm-cli
 
 go 1.21.5
 

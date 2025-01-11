@@ -4,8 +4,8 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
-	"github.com/aakashshankar/llm-cli/api"
-	"github.com/aakashshankar/llm-cli/defaults"
+	"github.com/ahhcash/llm-cli/api"
+	"github.com/ahhcash/llm-cli/defaults"
 	"github.com/spf13/cobra"
 	"os"
 )

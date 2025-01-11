@@ -1,8 +1,8 @@
 package test
 
 import (
-	"github.com/aakashshankar/llm-cli/mocks"
-	"github.com/aakashshankar/llm-cli/variants/anthropic"
+	"github.com/ahhcash/llm-cli/mocks"
+	"github.com/ahhcash/llm-cli/variants/anthropic"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"os"

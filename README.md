@@ -1,65 +1,73 @@
-# LLM CLI 🚀 
+# LLM CLI 🚀
 
-A CLI tool to interact with LLMs. Provide your API keys in this format: `<completer>_API_KEY>`
+A command-line interface for getting instant coding help and technical explanations while maintaining conversational context.
 
-The supported completers are:
-- [x] `ANTHROPIC`
-- [x] `MISTRAL`
-- [x] `OPENAI`
-- [ ] `PERPLEXITY`
+## Supported Models
+- ✅ Anthropic (Claude)
+- ✅ Mistral AI
+- ✅ OpenAI (GPT)
 
-## Installation ⚙️
+## Features
 
-Currently, you can build from source and use the generated binary.
-Clone the repository and run the following command:
+- **Coding Assistant**: Get concise explanations for programming concepts, debugging help, and code reviews
+- **Context-Aware**: Conversations persist locally, enabling follow-up questions and detailed discussions
+- **Multi-Model**: Switch between different LLMs while maintaining conversation context
+- **Multiple Sessions**: Manage parallel conversations with unique contexts
 
+## Installation
+
+### Using Go Install
 ```bash
+go install github.com/ahhcash/llm-cli/cmd/llm@latest
+```
+
+### Building from Source
+```bash
+git clone https://github.com/ahhcash/llm-cli
+cd llm-cli
 make
 ```
 
-This will create a binary named `llm` in the `bin` directory.
+## Quick Start
 
-## Features 🌟
-### 1. Context persistence
-All interactions are stored locally on your filesystem. This setup allows for multiple prompts to be sent to LLMs, with context being maintained across different conversations.
-
-### 2. Shared conversational history
-Your conversation history can be shared among all supported LLMs. This allows you to leverage the strengths of each model, combining their capabilities to create a powerful conversational experience.
-
-### 3. Terminal assistance
-Prefixing any command with llm provides a clear and concise explanation of that command, along with examples demonstrating its usage.
-
-### 4. Multiple sessions
-You can have multiple sessions, each with their own context and history. This allows you to switch between different conversations and maintain a consistent conversational experience.
-
-### Coming soon 🤫
-- [x] ~~Default models for each variant~~
-- [ ] Carefully crafted system prompts for terminal assistance
-- [x] ~~Multiple sessions~~
-- [ ] UI using [tview](https://github.com/rivo/tview)
-
-## Usage 💻
-
-### 1. CLIs
-
-To use the CLI, you need to provide your API keys as environment variables.
-You can set these variables in your shell configuration file (e.g., `.zshrc`) or directly in the terminal.
-
-Once you've set the environment variables, you can use the following command (from repo root) to prompt the LLM:
-
+1. Set API keys:
 ```bash
-bin/llm <llm-name> [flags] <prompt>
+export ANTHROPIC_API_KEY="your-key"
+export MISTRAL_API_KEY="your-key"
+export OPENAI_API_KEY="your-key"
 ```
-To chat, simply use the `chat` subcommand:
+
+2. Set default model:
 ```bash
-bin/llm <llm-name> chat
+export DEFAULT_COMPLETER="claude"  # or "mistral" or "gpt"
 ```
-And of course, add `/path/to/repo/bin` to your `$PATH` to use the CLI from anywhere.
 
-### 2. Command assist
-Create an environment variable `DEFAULT_COMPLETER` with the name of the completer you want to use. They are:
-- `claude`
-- `mistral`
-- `gpt`
+## Usage
 
-Then, you can prefix any command you want to understand with `llm` to understand how it works with examples.
+### Get Coding Help
+```bash
+llm claude "Explain goroutines in Go"
+llm claude "Review my function: func add(a, b int) int { return a + b }"
+llm claude "Debug error: fatal: not a git repository"
+```
+
+### Interactive Sessions
+```bash
+llm claude chat     # Start chat session
+llm session list    # List all sessions
+llm session switch <uuid>  # Switch context
+```
+
+### Advanced Usage
+```bash
+llm claude -S "You are a security expert" "Review my SSH config"
+llm claude --model claude-3-opus-20240229 "Complex system design"
+```
+
+## Troubleshooting
+- Check environment variables if API calls fail
+- Ensure Go 1.21+ for building
+- Verify config directory permissions
+
+## License
+MIT License - See LICENSE file

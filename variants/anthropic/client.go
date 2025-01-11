@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/aakashshankar/llm-cli/session"
+	"github.com/ahhcash/llm-cli/session"
 	"io"
 	"net/http"
 	"strings"

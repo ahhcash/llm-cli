@@ -3,8 +3,8 @@ package api
 import (
 	"bufio"
 	"fmt"
-	"github.com/aakashshankar/llm-cli/defaults"
-	"github.com/aakashshankar/llm-cli/llm"
+	"github.com/ahhcash/llm-cli/defaults"
+	"github.com/ahhcash/llm-cli/llm"
 	"os"
 )
 

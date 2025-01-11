@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/aakashshankar/llm-cli/session"
+	"github.com/ahhcash/llm-cli/session"
 	"github.com/spf13/cobra"
 )
 

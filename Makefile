@@ -10,7 +10,7 @@ GOARCH=$(shell go env GOARCH)
 
 all: build
 build:
-	$(GOBUILD) -o bin/$(BINARY_NAME) -v
+	$(GOBUILD) -o bin/$(BINARY_NAME) -v ./cmd/llm
 
 clean:
 	$(GOCLEAN)
